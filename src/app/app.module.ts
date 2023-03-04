@@ -6,7 +6,7 @@
 
 // Angular library modules (collection of javascript files)
 // start with @angular prefix
-// install using npm
+// install using npm 
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
