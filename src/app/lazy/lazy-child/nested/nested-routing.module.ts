@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from 'src/app/services/authentication/guard/auth.guard';
 import { NestedComponent } from './nested.component';
 import { Nested1Component } from './nested1/nested1/nested1.component';
 import { SubNestedComponent } from './sub-nested/sub-nested/sub-nested.component';
@@ -15,7 +16,7 @@ const routes: Routes = [
 //  path --> specific url
 //  component --> parent component
 //  children --> array of object of child components (main component having child component inside it)
-  { path: '', component: NestedComponent,
+  { path: '', component: NestedComponent, canActivate:[AuthGuard],
     children:[
       // in my opinion it is nested component with nested route (render inside other fetured component)
       {path: 'sub-nested',component:SubNestedComponent}

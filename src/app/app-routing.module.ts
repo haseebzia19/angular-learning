@@ -35,6 +35,7 @@ const routes: Routes = [
   // --module app.module will initialize the new feature module in root module (app.module.ts) 
   { path: 'lazy', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) },
   { path: 'nested', loadChildren: () => import('./lazy/lazy-child/nested/nested.module').then(m => m.NestedModule) },
+  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
  // object with 2 properties
  // path : which specify url
  // component property is replaced by lazyChildren
