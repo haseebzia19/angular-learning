@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { ChildAComponent } from './child-a/child-a.component';
 import { ChildBComponent } from './child-b/child-b.component';
 import { TestingInterceptor } from './shared/testing/testing.interceptor';
+import { AuthGuard } from './services/authentication/guard/auth.guard';
 // A decorator funtion tells angular that class in file is a module
 // How to run and compile module code
 // Take single metadata object
@@ -36,7 +37,8 @@ import { TestingInterceptor } from './shared/testing/testing.interceptor';
   providers: [
 
     // register http interceptor which modify all request made by app (in this case add auth token in header)
-    {provide : HTTP_INTERCEPTORS,useClass:TestingInterceptor,multi:true} 
+    {provide : HTTP_INTERCEPTORS,useClass:TestingInterceptor,multi:true},
+    AuthGuard
   
   ], // global collection of services, accessible in all parts of app
   bootstrap: [AppComponent] // call root component to bootstrap, only used in root module
