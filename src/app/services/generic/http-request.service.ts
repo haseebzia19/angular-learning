@@ -18,14 +18,14 @@ export class HttpRequestService {
 
   constructor(private http : HttpClient) { }
 
-  public genaricServiceCaller(request : RequestType, url : string, data? : any){
+  public genaricServiceCaller<T>(request : RequestType, url : string, data? : any){
     let apiUrl = 'localhost:3000/';
     apiUrl = apiUrl + url;
     if(request && url){
       if(request == this.requestType.GET){
-        return this.http.get(apiUrl);
+        return this.http.get<T>(apiUrl);
       }else if(request == this.requestType.POST){
-        return this.http.post(apiUrl,data);
+        return this.http.post<T>(apiUrl,data);
       }else{
         throw 'Invalid Controller'
       }
