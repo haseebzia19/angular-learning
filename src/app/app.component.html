@@ -67,6 +67,35 @@
   <router-outlet></router-outlet>
 <!-- ------------------End----------------------------- -->
 
+<!-- ------------------pipes----------------------------- -->
+
+<!-- pipes take input value and transform into desired output ad display in html -->
+<!-- most of time we use pipes in html -->
+
+<!-- types of pipe -->
+<!-- built in pipes, custom pipes, parametrized pipe -->
+
+<!-- built in pipes -->
+ <!-- {{pipeDemo1 | upercase }}  transform input to all upercase letter -->
+ <!-- {{pipeDemo2 | date }}  format input value as date string -->
+ <!-- {{pipeDemo3 | currency }}  format input value as currency string -->
+ <!-- {{pipeDemo4 | json }}  format input value as json string -->
+
+ <!-- custom pipe -->
+ <!-- go to prefix custom pipe file -->
+ <!-- <p>{{ value | prefix }}</p> -->
+
+ <!-- parametrized pipe -->
+<!-- pipe can also take parameters used to cofigure the behavior of pipe -->
+<!-- <p>{{ value | suffix:' Suffix' }}</p> -->
+<!-- transform(value: string, param: string): string { -->
+
+  <!-- multiple pipes in single statement -->
+  <!-- {{ myDate | date:'shortDate' | uppercase }} -->
+
+<!-- ------------------End----------------------------- -->
+
+
 
 </body>
 </html>

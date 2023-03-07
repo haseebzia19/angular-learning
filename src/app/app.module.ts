@@ -20,6 +20,7 @@ import { ChildBComponent } from './child-b/child-b.component';
 import { TestingInterceptor } from './shared/testing/testing.interceptor';
 import { AuthGuard } from './services/authentication/guard/auth.guard';
 import { HttpErrorInterceptor } from './shared/httpError/http-error.interceptor';
+import { PrefixPipe } from './shared/pipes/prefix.pipe';
 // A decorator funtion tells angular that class in file is a module
 // How to run and compile module code
 // Take single metadata object
@@ -27,7 +28,8 @@ import { HttpErrorInterceptor } from './shared/httpError/http-error.interceptor'
   declarations: [// view classes that belongs to this module, 3 types; component, directive, pipes
     AppComponent,
     ChildAComponent,
-    ChildBComponent
+    ChildBComponent,
+    PrefixPipe
   ],
   imports: [ // import other modules to use there exported classes
     BrowserModule,
