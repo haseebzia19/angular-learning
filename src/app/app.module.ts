@@ -19,6 +19,7 @@ import { ChildAComponent } from './child-a/child-a.component';
 import { ChildBComponent } from './child-b/child-b.component';
 import { TestingInterceptor } from './shared/testing/testing.interceptor';
 import { AuthGuard } from './services/authentication/guard/auth.guard';
+import { HttpErrorInterceptor } from './shared/httpError/http-error.interceptor';
 // A decorator funtion tells angular that class in file is a module
 // How to run and compile module code
 // Take single metadata object
@@ -37,7 +38,16 @@ import { AuthGuard } from './services/authentication/guard/auth.guard';
   providers: [
 
     // register http interceptor which modify all request made by app (in this case add auth token in header)
-    {provide : HTTP_INTERCEPTORS,useClass:TestingInterceptor,multi:true},
+    {
+      provide : HTTP_INTERCEPTORS, // apply interceptor in all http request made by angular app
+      useClass:TestingInterceptor, // pass interceptor here 
+      multi:true // allow multiple interceptor
+    },
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass:HttpErrorInterceptor,
+      multi:true 
+    },
     AuthGuard
   
   ], // global collection of services, accessible in all parts of app
