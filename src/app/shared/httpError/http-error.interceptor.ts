@@ -24,7 +24,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
         // add notification code here
 
         // Observable.throw(error); or
-        return throwError(error);
+        return throwError(error); // throw error to the component from where request called
         
         
       })

@@ -8,7 +8,7 @@
 
 // importing angular libraries to fetch ngmodule and routing related things
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ChildAComponent } from './child-a/child-a.component';
 import { ChildBComponent } from './child-b/child-b.component';
 
@@ -54,7 +54,19 @@ const routes: Routes = [
 // this method initialize routing configuration and return instance of RouterModule
 // take router array as parameter
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // pre loading technique: (for lazy loaded modules)
+  // is a technique which is used to load all or some featured modules in background before initial load
+  // so when user need to load specific module, module will display without delay
+  // improve overall performance of app
+  // two types; PreloadAllModules, custom preloading
+  
+  // PreloadAllModules: loads all modules and their dependecies as soon as application starts
+  // it is default preloading strategy in angular
+
+  // custom preloading: use to loaded specific modules
+  imports: [RouterModule.forRoot(routes,{
+    preloadingStrategy: PreloadAllModules
+  })],
   // note : feature module routing file contain forChild instead of forRoot
   exports: [RouterModule]
 })
