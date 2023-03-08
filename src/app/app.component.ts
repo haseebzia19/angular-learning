@@ -1,6 +1,6 @@
 // Component controls view (patch of screen)
 // chunks of code
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { LevelService } from './services/level/level.service';
 
 // ------------- other decorators --------
@@ -14,7 +14,15 @@ import { LevelService } from './services/level/level.service';
   {
   selector: 'app-root', // help to create componenet instance in DOM
   templateUrl: './app.component.html', // link of html file
-  styleUrls: ['./app.component.scss'] // link of style sheet
+  styleUrls: ['./app.component.scss'], // link of style sheet
+  encapsulation:ViewEncapsulation.Emulated
+  // view encapsulation
+  // is a way to ensure that stype and html of component donot affect other component in app
+  // 3 types of view encapsulation; emulated, native, none
+  // By default is Emulated
+  // emulated view encapsulation : generate unique css class for each component;
+  // means style define in one component donot affect style in other component
+
   }
 )
 export class AppComponent  implements OnChanges, OnInit, DoCheck, AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy{
@@ -40,6 +48,7 @@ export class AppComponent  implements OnChanges, OnInit, DoCheck, AfterContentIn
 
   // -------------------DI is Heirarchical injector--------------- : 
   // every component has its own injector
+  // and instance in component is useable by their child components
   // if component not find instance inside their injector angular will search it in therir parent and if not then its parent  
   // parent child concept in injector
 
