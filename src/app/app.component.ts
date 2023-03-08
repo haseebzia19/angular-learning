@@ -31,12 +31,28 @@ export class AppComponent  implements OnChanges, OnInit, DoCheck, AfterContentIn
  constructor(
 
   private level : LevelService
-  // dependency Injection
+  // dependency Injection (DI)
+  // design pattern to inject dependencies inside component
   // when angular create a component, it first ask an injector for service that comp required
   // (injector is container of service instance with previous created).
   // if request service is not in container then injector add it 
   //  angular then call constructor with service arguments
 
+  // -------------------DI is Heirarchical injector--------------- : 
+  // every component has its own injector
+  // if component not find instance inside their injector angular will search it in therir parent and if not then its parent  
+  // parent child concept in injector
+
+  // if we use property providers:[myService] inside component decorator
+  // it will create instance inside injector of that component
+
+  //  if we donot use provider inside featured componenet but use in root component
+  // then feature component find required instance from root
+
+  // if i use @injectable({provideIn:'root'}) inside service then there is no need to add providers property
+  // in root or featured components. it will automatically add instance inside injector of root component
+  // and the component taht require that service will fetch this from root injector
+  // ------------End--------------------------------
  ){} // called 1st
 
 ngOnChanges(){} // when component created and execute when value of bind input property changes (@Input())
