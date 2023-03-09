@@ -1,3 +1,33 @@
-<p>nested works!</p>
+<!-- <p>nested works!</p> -->
+<!-- <router-outlet></router-outlet> -->
 
-<router-outlet></router-outlet>
+<!-- Reactive forms -->
+<!-- Reactive Forms in Angular are a way to create dynamic and complex forms in an efficient and scalable way -->
+<!-- importing modules and classes from @angular/forms -->
+<!-- import ReactivFormModule in module import property array -->
+<div>
+<form [formGroup]="myForm" >
+    <div>
+        <label for="">Name</label>
+        <input type="text" formControlName="name">
+        <!-- show message on error find if name control exsist and touched and error type -->
+        <p 
+        *ngIf="myFormControls?.name &&
+         myFormControls?.name?.touched &&
+         myFormControls?.name?.errors?.required">
+        Name is required
+        </p>
+    </div>
+    <div>
+        <label for="">Email</label>
+        <input type="text" formControlName="email">
+    </div>
+    <div>
+        <label for="">Password</label>
+        <input type="text" formControlName="password">
+    </div>
+    <div>
+        <button [disabled]="!myForm.valid">Submit</button>
+    </div>
+</form>
+</div>

@@ -5,6 +5,7 @@ import { NestedRoutingModule } from './nested-routing.module';
 import { NestedComponent } from './nested.component';
 import { Nested1Component } from './nested1/nested1/nested1.component';
 import { SubNestedComponent } from './sub-nested/sub-nested/sub-nested.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SubNestedComponent } from './sub-nested/sub-nested/sub-nested.component
   ],
   imports: [
     CommonModule,
-    NestedRoutingModule
+    NestedRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class NestedModule { }
