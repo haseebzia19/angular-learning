@@ -1,0 +1,17 @@
+Reactive programming is programming model
+Reactive programming is a way of writing code that allow developers to express the 
+flow of data through application in more declarative way
+
+In angular, reactive programing is used to manage and manuplate data in real time.
+angular use RxJS (fundamental part of angular) 3rd party library which provide set of tools and operators for
+building reactive application.
+
+In angular, most common use of angular is managing form. reactive forms provide a way
+to manage complex form input, validation and data synchronization.
+
+angular change detection system is also build around reactive programming.
+when data changes, angular update view(html) to reflect those changes.
+these changes are done using observable and operators to ensure that changes
+are made without unnecessary rendering. 
+
+

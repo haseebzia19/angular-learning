@@ -1,0 +1,14 @@
+Angular uses third party libraries to make appiaction more faster
+
+1. RxJS : 
+modern angular use this as its fundamental part.
+is used to manage and mauplate data (forms, change detection)
+
+2. Material (UI library) :  
+Using pre build component following design guide
+help to build ui easily and quickly (buttons, menu,forms icons)
+
+3. NgRx : 
+Is an open source library for manage the state of your application
+in centralize store.
+it is based on the principal of redux; use to manage state in react

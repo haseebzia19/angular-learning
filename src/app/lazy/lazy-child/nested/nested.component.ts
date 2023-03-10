@@ -37,7 +37,7 @@ export class NestedComponent implements OnInit {
     // calling group method group()
     // using FormBuilder, you can create more complex and nested forms with less code
     this.myForm = this.fb.group({
-      name : ['',Validators.required],
+      name : [''],
       email : ['',Validators.required],
       password : ['',Validators.required]
     })
@@ -45,7 +45,12 @@ export class NestedComponent implements OnInit {
   }
   getOrSetData(){
    
-    this.myForm.controls['name'].setValue('haseeb'); // to set value of input field name 
+    this.myForm.get('name')?.setValue('haseeb') // to set value of input field name 
+    this.myForm.get('name')?.value  // get value of input field
+    this.myForm.get('name')?.reset()  // reset field
+    this.myForm.get('name')?.setValidators(Validators.required); // set validation of field 
+    this.myForm.get('name')?.clearValidators()  // clear field validation
+    this.myForm.get('name')?.setErrors(null)  // set field validation
     this.myForm.reset(); // reset all form
     
   }
