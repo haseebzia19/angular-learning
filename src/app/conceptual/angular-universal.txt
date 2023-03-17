@@ -1,0 +1,7 @@
+Angular universal is server side rendering (ssr) solution for angular application.
+by default angular application renderd on client side, 
+which mean complete application loaded on client side and then rendered
+which slower initial load time, espacically for large and complex applications.
+Search engin may not index your application content if it renderd on client side.
+Angular universal solve this problem by rendering on server side and send pre-renderd (html) pages on client side.
+Angular universal is powerfull tool for improving the performance and SEO of your angular applications.

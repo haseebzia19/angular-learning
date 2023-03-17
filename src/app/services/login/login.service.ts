@@ -14,4 +14,7 @@ export class LoginService {
   sigIn(data:any) : Observable<any>{
     return this.httpRequest.genaricServiceCaller(RequestType.POST,'sigin',data);
   }
+  getDataBeforeLoad(id : any) : Observable<any>{
+    return this.httpRequest.genaricServiceCaller(RequestType.GET,`get-data/${id}`)
+  }
 }
